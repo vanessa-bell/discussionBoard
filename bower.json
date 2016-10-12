@@ -1,0 +1,23 @@
+{
+  "name": "discussionBoard",
+  "description": "MEAN discussion board",
+  "main": "app.js",
+  "authors": [
+    "Vanessa Bell <vanessa.bell14@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vanessa-bell",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,52 @@
+<h1>Welcome, </h1>
+<p>Dashboard | <a href="#/">Logout</a></p>
+<div class="row main">
+	<div class="col-md-offset-8">
+		<input type="text" ng-model="query" placeholder="Search">
+	</div>
+	<div class="col-xl-12">
+		<table class="table-striped">
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Topic</th>
+					<th>User Name</th>
+					<th>Posts</th>
+				</tr>
+			</thead>
+			<tbody ng-controller="topicController">
+				<tr ng-repeat="topic in topics | filter: query">
+					<td ng-bind="topic-category"></td>
+					<td ng-bind="topic.title" href="#/topic/{{topic._id}}"></a></td>
+					<td ng-bind="topic.name" href="#/user/{{topic.user_id}}"></a></td>
+					<td ng-bind="topic.posts"></td>
+				</tr>
+			</tbody>
+			</table>
+
+	<h3>Add a New Topic</h3>
+	<form class="form-vertical" role="form">
+		<div class="col-md-4">
+		<div class="form-group">
+			
+			<label class="control-label col-md-2">Topic:</label>
+				<input class="form-control" type="text" ng-model="newTopic.title">
+			</div>
+		
+			
+			<label class="control-label col-md-2">Description:</label>
+				<textarea class="form-control" ng-model="newTopic.description"></textarea>
+			
+	
+			
+			<label class="control-label col-md-2">Category:</label>
+				<select class="form-control bootstrap-select" ng-model="newTopic.category">
+					<option value="html">HTML</option>
+					<option value="ios">iOS</option>
+				</select>
+			<br>
+			<button class="btn btn-primary col-md-offset-4" ng-click="createTopic(newTopic, user)">Post Topic</button>
+		</div>
+		
+	</form>
+</div>
